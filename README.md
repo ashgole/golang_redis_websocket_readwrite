@@ -23,7 +23,7 @@ The server is a small golang code listening to a web socket and saving the data 
 ![](images/client_side.PNG)
 
 
-### retrive data from Redis ky value Database : like this -> get(key)
+### Retrive data from Redis ky value Database : like this -> get(key)
 ![](images/redis_data.PNG)
 
 
