@@ -16,7 +16,7 @@ The server is a small golang code listening to a web socket and saving the data 
 
 
 ### start Redis Server
-> go run main.go
+>go run main.go
 ![](images/admin_client.PNG)
 
 
