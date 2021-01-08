@@ -6,7 +6,7 @@ The student will enter his RollNo on a screen. He will see a text area in HTML. 
 Server Side web socket connection in GoLang :
 The server is a small golang code listening to a web socket and saving the data to Redis key value pair DB. You can clone it from here 
 
-upload this 4 files to your local xampp server or other
+<h3>upload this 4 files to your local xampp server or other<h3>
 - admin.html
 - admin.js
 - index.html
@@ -15,15 +15,15 @@ upload this 4 files to your local xampp server or other
 ![](images/start.PNG)
 
 
-start Redis Server
+<h3>start Redis Server</h3>
 ![](images/admin_client.PNG)
 
 
-client side only
+<h3>client side only</h3>
 ![](images/client_side.PNG)
 
 
-retrive data from Redis ky value Database : like this -> get(key) 
+<h3>retrive data from Redis ky value Database : like this -> get(key)</h3>
 ![](images/redis_data.PNG)
 
 
