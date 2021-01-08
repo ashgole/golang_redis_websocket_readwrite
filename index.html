@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Simple Chat</title> 
+</head>
+<body> 
+<h1>Client Page</h1>
+
+type Roll No and press Enter: <input type="text" id="rollnoId" ><br> 
+<main id="app" style="display:none"> 
+<div class="row" v-if="!joined">
+<textarea rows="7" cols="50" type="text" v-model="newMsg" id="msgBoxId" @keyup.space="send" ></textarea>
+<button  @click="send">Sends</button> 
+</div> 
+
+Roll No : <p id="rollno"></p>
+Text : <p id="pId"></p>
+Total word : <p id='totalWordId'></p>
+Total char : <p id="totalCharId" ></p>
+Timer : <p id='timerId'></p>
+Words/Minute : <p id='wpmId'></p>
+</main> 
+<script src="https://unpkg.com/vue@2.1.3/dist/vue.min.js"></script>
+<script src="https://cdn.jsdelivr.net/emojione/2.2.6/lib/js/emojione.min.js"></script>
+<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/md5.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
+<script src="index.js"></script>
+</body>
+</html>
+
+
+<script>
+document.getElementById('msgBoxId').onkeypress=function()
+{
+
+var rno = document.getElementById("rollnoId").value; 
+document.getElementById("rollno").innerHTML=rno;
+
+ 
+var str=document.getElementById("msgBoxId").value;
+document.getElementById("pId").innerHTML=str;
+
+var  strC = str.split(' ').length;		 
+document.getElementById("totalWordId").innerHTML  = strC;
+
+var charC = str.length;
+document.getElementById("totalCharId").innerHTML  = charC;
+}
+
+//--*
+var c = 1;
+var interval =  setInterval(function(){ 
+document.getElementById("timerId").innerHTML=c;
+var str  = document.getElementById("msgBoxId").value;
+var  strC = str.split(' ').length;		  
+var wpm = (strC/c)*60;
+document.getElementById("wpmId").innerHTML  = wpm;
+if(c=='60'){
+stopInterval()
+}
+c++; 
+}, 1000);
+
+function stopInterval() {
+	clearInterval(interval);
+}
+
+//-----------*
+var rno = document.getElementById("rollnoId"); 
+rno.addEventListener("keypress",function (e){ 
+     if (e.key === 'Enter') {
+var rno = document.getElementById("rollnoId").value; 
+document.getElementById("rollno").innerHTML=rno;	
+document.getElementById("app").style.display="block";	
+
+}
+	});
+ 
+</script>
